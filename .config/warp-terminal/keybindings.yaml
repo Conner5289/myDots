@@ -1,0 +1,14 @@
+---
+"workspace:activate_second_tab": none
+"input:open_completion_suggestions": tab
+"workspace:activate_prev_tab": alt-h
+"input:toggle_ai_ask_follow_up": none
+"workspace:activate_third_tab": none
+"editor_view:delete_all_left": none
+"workspace:move_tab_right": none
+"workspace:move_tab_left": none
+"workspace:activate_first_tab": none
+"workspace:activate_next_tab": alt-l
+"editor_view:insert_autosuggestion": ctrl-y
+"workspace:activate_fourth_tab": none
+"terminal:backward_tabulation": none
