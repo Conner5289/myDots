@@ -1,11 +1,37 @@
 (defsrc
  caps
+ Space
+ j
+ k
+ f
+ d
 )
 
+;;(deflocalkeys
+;;)
+
 (defalias
- escctrl (tap-hold 100 100 esc lctrl)
+ escctrl (tap-hold 100 200 esc lctrl)
+ spacelayer (tap-hold 100 200 Space (layer-toggle sym_layer))  
 )
 
 (deflayer base
  @escctrl
+ @spacelayer
+ j
+ k
+ f
+ d
 )
+
+(deflayer sym_layer
+  _               ;; caps: transparent
+  -               ;; spc: transparent
+  S-9	 		  ;; j:(
+  = 			  ;; k: outputs "."
+  S-1               ;; f: outputs "="
+  . 			  ;; l: outputs "!"
+)
+
+
+

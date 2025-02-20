@@ -36,6 +36,8 @@ alias spring="mvn spring-boot:run"
 alias rm="sudo trash-put"
 alias wakePC="wol 2c:f0:5d:65:31:f7"
 alias sshPC="ssh 192.168.1.3"
+alias ls="eza --icons"
+alias cd="z"
 
 
 #encrypted disk
@@ -66,6 +68,7 @@ export XDG_CURRENT_DESKTOP=sway
 
 #Starship
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 #user path adds
 export PATH="$HOME/Bin:$PATH"
@@ -92,8 +95,6 @@ ranger_cd() {
         rm -f "$temp_file"
     fi
 }
-
-
 
 
 
