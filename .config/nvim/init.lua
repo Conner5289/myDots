@@ -181,6 +181,16 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- prime refactor
+
+-- vim.keymap.set('x', '<leader>re', ':Refactor extract ')
+-- vim.keymap.set('x', '<leader>rf', ':Refactor extract_to_file ')
+-- vim.keymap.set('x', '<leader>rv', ':Refactor extract_var ')
+-- vim.keymap.set({ 'n', 'x' }, '<leader>ri', ':Refactor inline_var')
+-- vim.keymap.set('n', '<leader>rI', ':Refactor inline_func')
+-- vim.keymap.set('n', '<leader>rb', ':Refactor extract_block')
+-- vim.keymap.set('n', '<leader>rbf', ':Refactor extract_block_to_file')
+--
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -379,10 +389,12 @@ require('lazy').setup({
           },
         },
       }
+      -- load refactoring Telescope extension
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'refactoring')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -396,7 +408,9 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
+      vim.keymap.set({ 'n', 'x' }, '<leader>rr', function()
+        require('telescope').extensions.refactoring.refactors()
+      end)
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -899,6 +913,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autoparis',
   require 'kickstart.plugins.undoTree',
   require 'kickstart.plugins.neogit',
+  require 'kickstart.plugins.refactoring',
 
   --NOTE: my lsp shit
 
