@@ -5,6 +5,7 @@
  k
  f
  d
+ a
 )
 
 ;;(deflocalkeys
@@ -22,6 +23,7 @@
  k
  f
  d
+ a
 )
 
 (deflayer sym_layer
@@ -31,6 +33,7 @@
   = 			  ;; k: outputs "."
   S-1               ;; f: outputs "="
   S-' 			  ;; l: outputs "!"
+  S-2
 )
 
 

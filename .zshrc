@@ -1,51 +1,59 @@
 
 
 #Alias
-alias vbox="virtualbox &"
-alias ni="nvim"
-alias nim="nvim ."
+
+#Admin
+alias sshServer="ssh conner@192.168.1.5"
+alias wakePC="wol 2c:f0:5d:65:31:f7"
+alias sshPC="ssh 192.168.1.3"
+
+#Cli
 alias la="ls -a"
 alias cl="clear"
 alias 'rm*'="trash-put *"
-alias weather="curl wttr.in"
-alias rmclass="rm *.class"
-alias sshServer="ssh conner@192.168.1.5"
-alias zshrc="cd ~; nvim .zshrc"
+alias zshrc="nvim ~/.zshrc; source ~/.zshrc"
 alias cdNeo="cd ~/.config/nvim/; nvim ."
 alias ran="ranger_cd"
+alias .="./run"
+alias ..="cd .."
+alias rm="sudo trash-put"
+alias ls="eza --icons"
+alias cd="z"
+alias ':q'="exit"
+
+#Fan
+alias fanLow="fw-fanctrl use lazy"
+alias fanMed="fw-fanctrl use agile"
+alias fanHot="fw-fanctrl use hot"
+
+#Neovim
+alias ni="nvim"
+alias nim="nvim ."
+
+#Nas
+alias nasUp="sudo systemctl start home-conner-Nas.mount && sudo systemctl status home-conner-Nas.mount"
+alias nasDown="sudo systemctl stop home-conner-Nas.mount && sudo systemctl status home-conner-Nas.mount"
+alias nasStatus="sudo systemctl status home-conner-Nas.mount"
+
+#Volume
+alias mute="pactl set-sink-mute @DEFAULT_SINK@ toggle"
+alias volUp="pactl set-sink-volume @DEFAULT_SINK@ +10%"
+alias volDown="pactl set-sink-volume @DEFAULT_SINK@ -10%"
+
+#Vpn
 alias vpnup="sudo wg-quick up wg0"
 alias vpndown="sudo wg-quick down wg0"
+
+#Not use
 alias rpush="sudo pushRsyncScript.sh"
 alias rpull="sudo pullRsyncScript.sh"
 alias Rshutdown="sudo pushRsyncScript.sh && shutdown now"
 alias Rreboot="sudo pushRsyncScript.sh && reboot" 
-alias nasUp="sudo systemctl start home-conner-Nas.mount && sudo systemctl status home-conner-Nas.mount"
-alias nasDown="sudo systemctl stop home-conner-Nas.mount && sudo systemctl status home-conner-Nas.mount"
-alias nasStatus="sudo systemctl status home-conner-Nas.mount"
-alias mute="pactl set-sink-mute @DEFAULT_SINK@ toggle"
-alias volUp="pactl set-sink-volume @DEFAULT_SINK@ +10%"
-alias volDown="pactl set-sink-volume @DEFAULT_SINK@ -10%"
+
+#Random
 alias coffee="ssh terminal.shop"
-alias fanLow="fw-fanctrl use lazy"
-alias fanMed="fw-fanctrl use agile"
-alias fanHot="fw-fanctrl use hot"
-alias .="./run"
-alias ..="cd .."
 alias spring="mvn spring-boot:run"
-alias rm="sudo trash-put"
-alias wakePC="wol 2c:f0:5d:65:31:f7"
-alias sshPC="ssh 192.168.1.3"
-alias ls="eza --icons"
-alias cd="z"
 
-
-#encrypted disk
-alias eDisk="sudo mount /dev/mapper/luks-6303d392-02df-447c-aa4e-86e72713ae88 /home/conner/Disk/eDisk"
-alias umeDisk="sudo umount /home/conner/Disk/eDisk/"
-
-#virtual disk
-alias vDisk="sudo mount /dev/sda1 /home/conner/Disk/vDisk"
-alias umvDisk="sudo umount /home/conner/Disk/vDisk/"
 
 #options
 setopt correct
